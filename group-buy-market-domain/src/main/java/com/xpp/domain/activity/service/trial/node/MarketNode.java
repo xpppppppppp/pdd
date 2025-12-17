@@ -5,21 +5,26 @@ import com.xpp.domain.activity.model.entity.TrailBalanceEntity;
 import com.xpp.domain.activity.service.trial.AbstractGroupBuyMarketSupport;
 import com.xpp.domain.activity.service.trial.factory.DefaultActivityStrategyFactory;
 import com.xpp.types.design.framework.tree.StrategyHandler;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
 
-@Service
-@Slf4j
-public class SwitchRoot extends AbstractGroupBuyMarketSupport<MarketProductEntity, DefaultActivityStrategyFactory.DynamicContext, TrailBalanceEntity> {
+import javax.annotation.Resource;
+import java.util.concurrent.ThreadPoolExecutor;
 
-    private MarketNode marketNode;
+public class MarketNode extends AbstractGroupBuyMarketSupport<MarketProductEntity, DefaultActivityStrategyFactory.DynamicContext, TrailBalanceEntity> {
+    @Resource
+    private ThreadPoolExecutor threadPoolExecutor;
+
+    @Override
+    protected void multiThread(MarketProductEntity requestParameter, DefaultActivityStrategyFactory.DynamicContext dynamicContext) {
+
+    }
+
     @Override
     protected TrailBalanceEntity doApply(MarketProductEntity requestParameter, DefaultActivityStrategyFactory.DynamicContext dynamicContext) throws Exception {
-        return router(requestParameter, dynamicContext);
+        return null;
     }
 
     @Override
     public StrategyHandler<MarketProductEntity, DefaultActivityStrategyFactory.DynamicContext, TrailBalanceEntity> get(MarketProductEntity requestParameter, DefaultActivityStrategyFactory.DynamicContext dynamicContext) {
-        return marketNode;
+        return null;
     }
 }
