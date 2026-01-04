@@ -16,8 +16,8 @@ public class IndexGroupBuyMarketServiceImpl implements IIndexGroupBuyMarketServi
     
     @Override
     public TrailBalanceEntity indexMarketTrial(MarketProductEntity marketProductEntity) throws Exception {
-        StrategyHandler<MarketProductEntity, DefaultActivityStrategyFactory.DynamicContext, TrailBalanceEntity> strategyHandler = defaultActivityStrategyFactory.strategyHandler();
-        TrailBalanceEntity trailBalanceEntity = strategyHandler.apply(marketProductEntity, new DefaultActivityStrategyFactory.DynamicContext());
-        return trailBalanceEntity;
+        StrategyHandler<MarketProductEntity, DefaultActivityStrategyFactory.DynamicContext, TrailBalanceEntity> strategyHandler
+                = defaultActivityStrategyFactory.strategyHandler();
+        return strategyHandler.apply(marketProductEntity, new DefaultActivityStrategyFactory.DynamicContext());
     }
 }

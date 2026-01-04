@@ -1,5 +1,8 @@
 package com.xpp.types.design.framework.tree;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeoutException;
+
 public abstract class AbstractMultiThreadStrategyRouter<T, D, R> implements StrategyHandler<T, D, R>, StrategyMapper<T, D, R>{
 
     protected StrategyHandler<T, D, R> defaultStrategyHandler = StrategyHandler.DEFAULT;
@@ -22,7 +25,7 @@ public abstract class AbstractMultiThreadStrategyRouter<T, D, R> implements Stra
     }
 
 
-    protected abstract void multiThread(T requestParameter, D dynamicContext);
+    protected abstract void multiThread(T requestParameter, D dynamicContext) throws ExecutionException, InterruptedException, TimeoutException;
 
     protected abstract R doApply(T requestParameter, D dynamicContext) throws Exception;
 

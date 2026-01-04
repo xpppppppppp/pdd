@@ -20,4 +20,5 @@ public class TrailBalanceEntity {
     private Date startTime;
     private Date endTime;
     private Boolean is_visible;
+    private Boolean is_enable;
 }

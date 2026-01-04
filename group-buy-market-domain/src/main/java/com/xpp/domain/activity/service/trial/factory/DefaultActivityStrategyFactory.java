@@ -2,14 +2,17 @@ package com.xpp.domain.activity.service.trial.factory;
 
 import com.xpp.domain.activity.model.entity.MarketProductEntity;
 import com.xpp.domain.activity.model.entity.TrailBalanceEntity;
+import com.xpp.domain.activity.model.valobj.GroupBuyActivityDiscountVO;
+import com.xpp.domain.activity.model.valobj.SkuVO;
 import com.xpp.domain.activity.service.trial.node.RootNode;
 import com.xpp.types.design.framework.tree.StrategyHandler;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Service;
 
-
+@Service
 public class DefaultActivityStrategyFactory {
 
     private final RootNode rootNode;
@@ -27,6 +30,8 @@ public class DefaultActivityStrategyFactory {
     @AllArgsConstructor
     public static class DynamicContext{
 
+        private GroupBuyActivityDiscountVO groupBuyActivityDiscountVO;
+        private SkuVO skuVO;
 
     }
 }

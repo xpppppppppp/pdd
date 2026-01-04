@@ -1,4 +1,4 @@
-package com.xpp.infrastructure.dao.po;
+package com.xpp.domain.activity.model.valobj;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -6,19 +6,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.util.Date;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Sku {
-    private Long id;
-    private String source;
-    private String channel;
+public class SkuVO {
     private String goodsId;
     private String goodsName;
     private BigDecimal originalPrice;
-    private Date createTime;
-    private Date updateTime;
 }
