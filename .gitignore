@@ -2,6 +2,7 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+group-buy-market-app/src/main/resources/
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
